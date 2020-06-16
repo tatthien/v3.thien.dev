@@ -1,0 +1,142 @@
+:root {
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --color-text: #16161a;
+    --color-dark: #16161a;
+    --color-primary: #2cb67d;
+    --color-terminal-bg: #242427;
+    --color-laravel: #ff2d20;
+    --color-wordpress: #0073aa;
+    --color-vue: #40B883;
+    --type-xx-large: 200%;
+    --type-xxx-large: 300%:
+    --space-medium: 1rem;
+    --space-large: 2rem;
+    --space-x-large: 3rem;
+    --space-xx-large: 4rem;
+    --space-xxx-large: 6rem;
+    --container-width: 900px;
+}
+
+html {
+    font-size: 16px;
+}
+
+h2 {
+    font-size: var(--type-xx-large);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #fff;
+    margin-right: 1rem;
+    transition: all .25s ease-in;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: calc(0.9em + 0.9vw);
+    line-height: 1.5;
+    background: var(--color-dark);
+    color: #fff;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main {
+    padding: var(--space-xx-large) 0;
+}
+
+.terminal {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    background: var(--color-terminal-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 0.8rem;
+    text-align: left;
+}
+
+.terminal .hidden {
+    display: none;
+}
+
+.terminal .cursor {
+    content: '';
+    display: inline-block;
+    width: 0.8rem;
+    height: 3px;
+    background: var(--color-primary);
+    animation-name: blinking;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-end;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fw {
+    position: relative;
+}
+
+.fw.laravel {
+    color: var(--color-laravel);
+}
+
+.fw.wordpress {
+    color: var(--color-wordpress);
+}
+
+.fw.vue {
+    color: var(--color-vue);
+}
+
+.version {
+    padding-top: var(--space-x-large);
+}
+
+.version a {
+    opacity: 0.6;
+}
+
+.version a:hover {
+    opacity: 1;
+}
+
+@media all and (min-width: 768px) {
+    main {
+        padding: var(--space-xxx-large) 0;
+    }
+    
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .version {
+        padding-top: var(--space-xxx-large);
+    }
+}
